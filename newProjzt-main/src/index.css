@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-gold: #2563eb; /* Cobalt Blue accent to replace gold */
+  --color-gold-hover: #3b82f6; /* Lighter blue for hover */
+  
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+@utility animate-gradient-x {
+  animation: gradient-x 3s ease infinite;
+}
+
+@layer utilities {
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-slate-950 text-white antialiased selection:bg-gold selection:text-white;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(59, 130, 246, 0.08) 0px, transparent 50%);
+  }
+
+  /* Noise Overlay Utility */
+  .noise-overlay::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-950;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-zinc-800 border-2 border-zinc-950 rounded-full hover:bg-gold transition-colors;
+  }
+}
+
+.markdown-body h1 {
+  @apply text-4xl font-black uppercase tracking-tighter mb-10 text-white;
+}
+
+.markdown-body h2 {
+  @apply text-2xl font-bold uppercase tracking-tight mt-16 mb-8 text-white border-l-4 border-gold pl-4;
+}
+
+.markdown-body h3 {
+  @apply text-xl font-bold uppercase tracking-tight mt-10 mb-6 text-white/90;
+}
+
+.markdown-body p {
+  @apply text-lg text-white/60 leading-relaxed mb-8;
+}
+
+.markdown-body ul, .markdown-body ol {
+  @apply mb-10 ml-6 space-y-4;
+}
+
+.markdown-body li {
+  @apply text-white/60 leading-relaxed list-disc marker:text-gold;
+}
+
+.markdown-body blockquote {
+  @apply border-y border-white/10 py-10 my-16 italic text-2xl text-white/80 font-light text-center;
+}
+
+.markdown-body a {
+  @apply text-gold underline decoration-gold/30 hover:decoration-gold transition-all;
+}

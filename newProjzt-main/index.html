@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <script>
+      (function() {
+        try {
+          const originalFetch = window.fetch;
+          let currentFetch = originalFetch;
+          const descriptor = Object.getOwnPropertyDescriptor(window, 'fetch') || 
+                            Object.getOwnPropertyDescriptor(Object.getPrototypeOf(window), 'fetch');
+          
+          if (descriptor && !descriptor.configurable) {
+            console.warn('window.fetch is not configurable, cannot polyfill setter.');
+            return;
+          }
+
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() {
+              return currentFetch;
+            },
+            set: function(v) {
+              currentFetch = v;
+            }
+          });
+        } catch (e) {
+          // Ignore errors during polyfill
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le meilleur abonnement IPTV | IPTV europe 4K Streaming - IPTV Smarters Pro</title>
+    <meta name="description" content="Découvrez IPTV Smarters Pro, le meilleur abonnement IPTV en France. Streaming 4K sans coupure (no buffering) avec +25 000 chaînes et VOD. Stable et compatible tous appareils." />
+    <meta name="keywords" content="iptv france, best iptv subscription, 4k streaming, iptv no buffering, meilleur abonnement IPTV, IPTV Smarters Pro" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook (Fallback) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Le meilleur abonnement IPTV | IPTV europe 4K Streaming - IPTV Smarters Pro" />
+    <meta property="og:description" content="Streaming 4K sans coupure avec le meilleur abonnement IPTV en Europe & France. +25 000 chaînes en direct." />
+    <meta property="og:url" content="https://iptvsmartersprofficiel.shop/" />
+    <meta property="og:site_name" content="IPTV Smarters Pro" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=1200" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="de_DE" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_GB" />
+    <meta property="og:locale:alternate" content="nl_NL" />
+
+    <!-- Twitter Card (Fallback) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Le meilleur abonnement IPTV | IPTV europe 4K Streaming - IPTV Smarters Pro" />
+    <meta name="twitter:description" content="Streaming 4K sans coupure avec le meilleur abonnement IPTV en Europe & France. +25 000 chaînes en direct." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=1200" />
+    
+    <link rel="canonical" href="https://iptvsmartersprofficiel.shop/" />
+    
+    <!-- International Localized Hreflang Clusters -->
+    <link rel="alternate" hreflang="x-default" href="https://iptvsmartersprofficiel.shop/" />
+    <link rel="alternate" hreflang="fr-fr" href="https://iptvsmartersprofficiel.shop/abonnement-iptv-france" />
+    <link rel="alternate" hreflang="fr-be" href="https://iptvsmartersprofficiel.shop/iptv-abonnement-belgique" />
+    <link rel="alternate" hreflang="de-de" href="https://iptvsmartersprofficiel.shop/iptv-kaufen-deutschland" />
+    <link rel="alternate" hreflang="de-at" href="https://iptvsmartersprofficiel.shop/iptv-oesterreich" />
+    <link rel="alternate" hreflang="it-it" href="https://iptvsmartersprofficiel.shop/abbonamento-iptv-italia" />
+    <link rel="alternate" hreflang="es-es" href="https://iptvsmartersprofficiel.shop/comprar-iptv-espana" />
+    <link rel="alternate" hreflang="en-gb" href="https://iptvsmartersprofficiel.shop/premium-iptv-uk" />
+    <link rel="alternate" hreflang="en-ie" href="https://iptvsmartersprofficiel.shop/reliable-iptv-server-ireland" />
+    <link rel="alternate" hreflang="nl-nl" href="https://iptvsmartersprofficiel.shop/iptv-abonnement-nederland" />
+
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="shortcut icon" type="image/png" href="/logo.png" />
+    <meta name="theme-color" content="#020617" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,8 @@
+{
+  "name": "IPTV Smarters Pro",
+  "description": "A high-performance IPTV landing page and SEO-optimized blog platform featuring modern UI/UX and lightning-fast streaming showcases.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
